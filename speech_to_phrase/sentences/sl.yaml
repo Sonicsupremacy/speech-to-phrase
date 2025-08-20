@@ -32,36 +32,34 @@ data:
       - "weather"
 
   # lights (area)
-  - "(prižgi|ugasni) [vse] luči"
+  - "(prižgi|ugasni) [vse] luči [tukaj|v [tem] prostoru]"
   - "(prižgi|ugasni) [vse] luči v {area}"
-  - "nastavi svetlost luči na {brightness} (procentov|odstotkov)"
-  - "nastavi svetlost luči v {area} na {brightness} (procentov|odstotkov)"
-  - "nastavi barvo luči na {color}"
-  - "nastavi barvo luči v {area} na {color}"
+  - "nastavi svetlost [tukaj|v [tem] prostoru] na {brightness} (procentov|odstotkov)"
+  - "nastavi svetlost (v|na) {area} na {brightness} (procentov|odstotkov)"
+  - "nastavi barvo [vseh] luči (v|na) {area} na {color}"
 
   # lights (name)
   - sentences:
-      - "nastavi svetlost [luči] {name} na {brightness} (procentov|odstotkov)"
+      - "nastavi svetlost {name} na {brightness} (procentov|odstotkov)"
     domains:
       - "light"
     light_supports_brightness: true
 
   - sentences:
-      - "nastavi barvo [luči] {name} na {color}"
+      - "nastavi barvo {name} na {color}"
     domains:
       - "light"
     light_supports_color: true
 
   # doors and windows
-  # - "(odpri|dvigni|odgrni|razkrij|razvij|odkrij) [the] (blinds|curtains|windows) in [the] {area}"
-  # - "(open|close) [the] {area} (blinds|curtains|windows)"
-  - "(odpri|dvigni) garažna vrata"
-  # - sentences:
-  #     - "(open|close) [the] {name}"
-  #     - "(open|close) [the] {name} in [the] {area}"
-  #     - "is [the] {name} (open|closed)"
-  #   domains:
-  #     - "cover"
+  - "(odpri|dvigni|zapri|spusti) (rolete|roloje|žaluzije) [tukaj|v [tem] prostoru]"
+  - "(odpri|dvigni|zapri|spusti) (rolete|roloje|žaluzije) (v|na) {area}"
+  - "(odpri|dvigni|zapri|spusti) garažna vrata"
+  - sentences:
+      - "(odpri|dvigni|zapri|spusti) {name}"
+      - "(odpri|dvigni|zapri|spusti) {name} (v|na) {area}"
+    domains:
+      - "cover"
 
   # # locks
   # - sentences:
@@ -73,7 +71,7 @@ data:
   # generic on/off
   - sentences:
       - "(vklopi|izklopi|vključi|izključi|prižgi|ugasni) {name}"
-      - "(vklopi|izklopi|vključi|izključi|prižgi|ugasni) {name} v {area}"
+      - "(vklopi|izklopi|vključi|izključi|prižgi|ugasni) {name} (v|na) {area}"
     domains:
       - "light"
       - "switch"
@@ -137,6 +135,5 @@ data:
   # sensors
   - sentences:
       - "kakšna je vrednost [senzorja] {name}"
-      - "kakšno je stanje [senzorja] {name}
     domains:
       - "sensor"
